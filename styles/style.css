@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Vollkorn",sans-serif;
+}
+
+ul, li{
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  border-radius: 5px;
+  width: 100%;
+}
+
+P {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  letter-spacing: -0.005rem;
+  color: rgba(0,0,0,0.7);
+}
+
+body{
+  background-color: #FAFBFC;
+}
+
+.col-wide {
+  grid-column: 1 /-1;
+}
+
+/* ========== grid geral ======== */
+div#grid{
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) 3fr 300px;
+  grid-template-areas: "header header header"
+                        "sidenav content-main aside-right"
+                        "footer footer footer"; 
+ 
+} 
+
+/* ======== START HEADER ======= */
+
+header.header{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  background: linear-gradient(135deg, #8844ee, #b07DFB);
+  grid-area: header;
+  padding: 30px;
+}
+
+header.header nav ul{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+header.header nav ul li{
+  font-size: 1.25rem;
+  background-color: rgb(0,0,0,0.1);
+  padding-block: 10px;
+  padding-inline: 10px;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  transition: ease-in 0.2s;
+}
+
+header.header nav ul li:hover {
+  background-color: rgb(0,0,0,0.5);
+}
+
+header.header a.logo {
+  max-width: 200px;
+}
+
+/* ------========== END HEADER ========================= */
+
+/* ================= START SIDENAV ========================= */
+aside.sidenav {
+ background-color: #FAFBFC;
+ grid-area: sidenav;
+ padding: 30px;
+}
+
+aside.sidenav ul li a { 
+  display: block;
+  min-width: 60px;
+  max-width: 100px;
+  margin: 0 auto 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.15);
+  transition: 0.2s ease-out;
+}
+
+aside.sidenav ul li a:hover{
+  background-color: #b07DFB;
+  filter: brightness(1.1);
+  filter: contrast(1.0);
+}
+
+/* ================= END SIDENAV ========================= */
+
+
+/* =================== START CONTENT MAIN =============== */
+main.content-main{
+  background-color:#FAFBFC ;
+  grid-area: content-main;
+  max-width: 900px;
+  margin:  0 auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+main.content-main div.title{
+  color:#b07DFB;
+}
+
+main.content-main div.title h1{
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+main.content-main div.title span{
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+main.content-main div.characteristics{
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+main.content-main div.characteristics > div{
+  width: 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.15);
+}
+
+main.content-main div.characteristics > div span{
+  display: block;
+  color: #8844ee;
+}
+
+main.content-main div.characteristics > div .number{
+  font-size: 3rem;
+  line-height: 1;
+}
+
+main.content-main div.characteristics > div .label{
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+  padding: 5px 0 ;
+  position: relative;
+  top: 2px;
+}
+
+.Spotlight{
+  font-size: 0.875rem;
+  color: #b07dfb;
+  max-width: 16rem;
+}
+
+blockquote#quote,
+ul.list-items{
+  align-self: start;
+  background: linear-gradient(135deg, #8844ee, #B07df8);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0 rgba(44,44,44,0.15);
+  border-radius: 5px;
+}
+
+blockquote#quote p {
+  font-size: 1.5rem;
+  font-style: italic;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto; 
+  color: white;
+}
+
+ul.list-items li{
+  color: white;
+  font-family: "Courier" ,monospace;
+  font-size: 1.125rem;
+  padding: 15px;
+  border-bottom: 2px solid #B07df8;
+}
+
+ul.list-items li:last-child{
+  border: none;
+}
+
+main.content-main .img1 {
+  grid-row: span 2;
+  align-self: end;
+}
+
+main.content-main .img2{
+  align-self: end;
+}
+
+main.content-main div.information p + p {
+  margin-top: 30px;
+}
+
+/* =================== END CONTENT MAIN ============ */
+
+/* ========= START ASIDE-RIGHT =============== */
+aside.aside-right {
+  display: grid;
+  align-content: start;
+  background-color: #FAFBFC;
+  grid-area: aside-right;
+  padding: 30px;
+  gap: 30px;
+}
+
+/* ================= END ASIDE RIGHT =========================== */
+
+footer.footer{ 
+  display: flex;
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+  grid-area: footer;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+footer.footer p {
+  color: white;
+}
+
+/* ====== ENF FOOTER ======= */
+
+/* ======= START MEDIA ========= */
+
+@media(max-width: 1200px) {
+  div#grid {
+    grid-template-areas: 
+     "header header header"
+     "sidenav content-main content-main"
+     "sidenav aside-right aside-right"
+     "footer footer footer";                            
+  }
+}
+@media(max-width: 768px){
+  div#grid{
+    grid-template-columns: 100%;
+    grid-template-areas: 
+      "header"
+      "sidenav"
+      "content-main"
+      "aside-right"
+      "footer" ;
+  }
+}
+@media(max-width: 760px){
+  header.header{
+    grid-template-columns: auto;
+  }
+  a.logo{
+    margin-bottom: 20px;
+  }
+  header.header nav ul li a{
+    font-size: 1rem;
+  }
+  header.header nav ul {
+    gap: 10px;
+  }
+}
+@media(max-width: 760px){
+  aside.sidenav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    position: relative;
+  }
+  
+  aside.sidenav::after{
+    content: "➞";
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: black;
+    animation: seta 0.5s ease-in 0s infinite alternate;
+  }
+
+  aside.sidenav ul {
+    display: flex;
+  }
+
+  aside.sidenav ul li{
+    flex: 1 0 60px;
+  }
+
+  aside.sidenav {
+    padding: 0 30px;
+  }
+
+  aside.sidenav ul li a {
+    margin: 30px 30px 30px 0;
+  }
+}
+
+@media(max-width: 600px){
+  main.content-main{
+    grid-template-columns: auto;
+  }
+}
+
+
+/* ======= END MEDIAAA ========= */
+
+/* ==== START KEYFRAMES  ====  */
+@keyframes seta{
+  form{
+    right: 30px;
+  }
+  to {
+    right: 20px;
+  }
+}
+/* ======= END KEYFRAMES ========= */
